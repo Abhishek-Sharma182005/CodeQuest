@@ -53,9 +53,9 @@ export default function Home() {
   className="gap-2"
   asChild
 >
-  <Link href="https://codequest-pearl.vercel.app/api/auth/callback/github">
+  <Link href="https://github.com/Abhishek-Sharma182005/CodeQuest-100-Days-DSA">
     <Github className="w-5 h-5" />
-    Login with GitHub
+    Code With Us
   </Link>
 </Button>
               </motion.div>
