@@ -1,6 +1,6 @@
-import NextAuth, { NextAuthOptions, User } from "next-auth"
+import NextAuth from "next-auth"
 import GitHubProvider from "next-auth/providers/github"
-import { JWT } from "next-auth/jwt"
+import { NextAuthOptions } from "next-auth"
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -9,22 +9,9 @@ export const authOptions: NextAuthOptions = {
       clientSecret: process.env.GITHUB_CLIENT_SECRET!,
     }),
   ],
-  callbacks: {
-    async jwt({ token, user }: { token: JWT; user?: User }) {
-      if (user) {
-        token.id = user.id // Attach user ID
-      }
-      return token
-    },
-    async session({ session, token }: { session: any; token: JWT }) {
-      if (session.user) {
-        session.user.id = token.id // Attach user ID to session
-      }
-      return session
-    },
-  },
-  secret: process.env.NEXTAUTH_SECRET,
+  secret: process.env.NEXTAUTH_SECRET, // Ensure this is set in .env
 }
 
 const handler = NextAuth(authOptions)
+
 export { handler as GET, handler as POST }
