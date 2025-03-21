@@ -8,6 +8,9 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "eslintConfig": {
+    "extends": "next/core-web-vitals"
+  },
   "dependencies": {
     "@radix-ui/react-slot": "^1.0.2",
     "autoprefixer": "10.4.15",
@@ -40,6 +43,6 @@
     "google-auth-library": "^9.15.1",
     "google-spreadsheet": "^4.1.4",
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.2"
+    "typescript": "^5.3.3"
   }
 }
