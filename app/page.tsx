@@ -1,8 +1,9 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { ParticleBackground } from "@/components/ParticleBackground"
+import Link from "next/link";
+import { Button } from "../components/ui/button"
+import { ParticleBackground } from "../components/ParticleBackground"
 import { Github } from "lucide-react"
 
 export default function Home() {
@@ -47,13 +48,16 @@ export default function Home() {
                 whileTap={{ scale: 0.95 }}
               >
                 <Button
-                  variant="glass"
-                  size="lg"
-                  className="gap-2"
-                >
-                  <Github className="w-5 h-5" />
-                  Login with GitHub
-                </Button>
+  variant="glass"
+  size="lg"
+  className="gap-2"
+  asChild
+>
+  <Link href="https://codequest-pearl.vercel.app/api/auth/callback/github">
+    <Github className="w-5 h-5" />
+    Login with GitHub
+  </Link>
+</Button>
               </motion.div>
             </div>
           </motion.div>
