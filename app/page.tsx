@@ -44,21 +44,24 @@ export default function Home() {
             
             <div className="flex justify-center gap-4">
               <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Button
-  variant="glass"
-  size="lg"
-  className="gap-2"
-  asChild
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+  className="relative"
 >
-  <Link href="https://github.com/Abhishek-Sharma182005/CodeQuest-100-Days-DSA">
-    <Github className="w-5 h-5" />
-    Code With Us
-  </Link>
-</Button>
-              </motion.div>
+  <Button
+    variant="glass"
+    size="lg"
+    className="gap-2 px-6 py-3 rounded-lg relative overflow-hidden bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/50 hover:shadow-pink-500/50 transition-all"
+    asChild
+  >
+    <Link href="https://questive.vercel.app/">
+      <Github className="w-5 h-5" />
+      Sign in With Github
+    </Link>
+  </Button>
+  <div className="absolute inset-0 bg-white opacity-10 blur-xl animate-pulse"></div>
+</motion.div>
+
             </div>
           </motion.div>
 
